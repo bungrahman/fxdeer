@@ -131,6 +131,6 @@ C:\xampp\php\php.exe artisan make:model ModelName
 - **Payment**: Stripe
 - **Integration**: n8n
 
-## 📝 License
+## License
 
 Proprietary
