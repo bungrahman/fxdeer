@@ -15,6 +15,14 @@
     <input type="hidden" name="plan_id" value="{{ request()->query('plan') }}">
     
     <div class="mb-6">
+        <label class="block text-gray-500 dark:text-[#94A3B8] text-sm mb-2">Full Name</label>
+        <div class="relative">
+            <i data-feather="user" class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-[18px] h-[18px]"></i>
+            <input type="text" name="name" value="{{ old('name') }}" class="auth-input" placeholder="John Doe" required autofocus>
+        </div>
+    </div>
+
+    <div class="mb-6">
         <label class="block text-gray-500 dark:text-[#94A3B8] text-sm mb-2">Email Address</label>
         <div class="relative">
             <i data-feather="mail" class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-[18px] h-[18px]"></i>

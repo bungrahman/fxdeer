@@ -26,9 +26,10 @@
 
 <form id="bulk-delete-form" action="{{ route('admin.signals.bulk-delete') }}" method="POST">
     @csrf
-    <div class="section-card" style="overflow-x: auto;">
+    <div class="section-card">
         @if($signals->count() > 0)
-            <table>
+            <div class="overflow-x-auto">
+                <table>
                 <thead>
                     <tr>
                         <th style="width: 40px;">
@@ -106,6 +107,7 @@
                     @endforeach
                 </tbody>
             </table>
+            </div>
 
             <div style="margin-top: 1.5rem;">
                 {{ $signals->links() }}
@@ -128,7 +130,7 @@
         </form>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.5rem;">
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
         <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 16px; padding: 1.25rem; text-align: center;">
             <div style="font-size: 2rem; font-weight: 700;">{{ $stats['total_signals'] }}</div>
             <div style="color: var(--text-dim); font-size: 0.8rem; margin-top: 0.25rem;">Total Signals</div>
@@ -147,32 +149,34 @@
         </div>
     </div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Total</th>
-                <th>BUY</th>
-                <th>SELL</th>
-                <th>TP Hits</th>
-                <th>SL Hits</th>
-                <th>Win Rate</th>
-                <th>Top Pair</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td style="font-weight: 600;">{{ $stats['date'] }}</td>
-                <td>{{ $stats['total_signals'] }}</td>
-                <td style="color: var(--success); font-weight: 600;">{{ $stats['buy_count'] }}</td>
-                <td style="color: var(--danger); font-weight: 600;">{{ $stats['sell_count'] }}</td>
-                <td style="color: var(--success);">{{ $stats['tp_hits'] }}</td>
-                <td style="color: var(--danger);">{{ $stats['sl_hits'] }}</td>
-                <td style="font-weight: 700;">{{ $stats['win_rate'] }}</td>
-                <td style="font-family: monospace; font-weight: 600;">{{ $stats['top_pair'] }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Total</th>
+                    <th>BUY</th>
+                    <th>SELL</th>
+                    <th>TP Hits</th>
+                    <th>SL Hits</th>
+                    <th>Win Rate</th>
+                    <th>Top Pair</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="font-weight: 600;">{{ $stats['date'] }}</td>
+                    <td>{{ $stats['total_signals'] }}</td>
+                    <td style="color: var(--success); font-weight: 600;">{{ $stats['buy_count'] }}</td>
+                    <td style="color: var(--danger); font-weight: 600;">{{ $stats['sell_count'] }}</td>
+                    <td style="color: var(--success);">{{ $stats['tp_hits'] }}</td>
+                    <td style="color: var(--danger);">{{ $stats['sl_hits'] }}</td>
+                    <td style="font-weight: 700;">{{ $stats['win_rate'] }}</td>
+                    <td style="font-family: monospace; font-weight: 600;">{{ $stats['top_pair'] }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 @endsection
 

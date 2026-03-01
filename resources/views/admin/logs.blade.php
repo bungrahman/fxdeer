@@ -12,30 +12,32 @@
     </div>
 </header>
 
-<div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
     <!-- Usage Logs -->
-    <div class="section-card">
+    <div class="section-card lg:col-span-2">
         <div class="section-title"><i data-feather="terminal"></i> Usage Logs (History)</div>
-        <table>
-            <thead>
-                <tr>
-                    <th>User</th>
-                    <th>Pipeline</th>
-                    <th>Event ID</th>
-                    <th>Time</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($logs as $log)
-                <tr>
-                    <td>{{ $log->user->email ?? 'System' }}</td>
-                    <td><span class="tag" style="background: rgba(255,45,32,0.1); color: var(--primary); padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.7rem;">PIPE {{ $log->pipeline }}</span></td>
-                    <td style="font-family: monospace; font-size: 0.8rem; color: var(--text-dim);">{{ $log->event_id }}</td>
-                    <td class="text-gray-500 dark:text-gray-400">{{ $log->created_at->diffForHumans() }}</td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
+        <div class="overflow-x-auto">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="whitespace-nowrap">User</th>
+                        <th class="whitespace-nowrap">Pipeline</th>
+                        <th class="whitespace-nowrap">Event ID</th>
+                        <th class="whitespace-nowrap">Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($logs as $log)
+                    <tr>
+                        <td class="whitespace-nowrap">{{ $log->user->email ?? 'System' }}</td>
+                        <td class="whitespace-nowrap"><span class="tag" style="background: rgba(255,45,32,0.1); color: var(--primary); padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.7rem;">PIPE {{ $log->pipeline }}</span></td>
+                        <td class="whitespace-nowrap" style="font-family: monospace; font-size: 0.8rem; color: var(--text-dim);">{{ $log->event_id }}</td>
+                        <td class="text-gray-500 dark:text-gray-400 whitespace-nowrap">{{ $log->created_at->diffForHumans() }}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
         <div style="margin-top: 1.5rem;">{{ $logs->links() }}</div>
     </div>
 

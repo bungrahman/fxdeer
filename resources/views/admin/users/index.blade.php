@@ -25,30 +25,33 @@
 
 <div class="section-card">
     <div class="section-title"><i data-feather="users"></i> Registered Users</div>
-    <table>
+    <div class="overflow-x-auto">
+        <table>
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Email</th>
-                <th>Plan</th>
-                <th>Status</th>
-                <th>Joined</th>
-                <th>Actions</th>
+                <th class="whitespace-nowrap">ID</th>
+                <th class="whitespace-nowrap">Name</th>
+                <th class="whitespace-nowrap">Email</th>
+                <th class="whitespace-nowrap">Plan</th>
+                <th class="whitespace-nowrap">Status</th>
+                <th class="whitespace-nowrap">Joined</th>
+                <th class="whitespace-nowrap">Actions</th>
             </tr>
         </thead>
         <tbody>
             @foreach($users as $user)
             <tr>
-                <td class="text-gray-500 dark:text-gray-400">#{{ $user->id }}</td>
-                <td class="font-medium">{{ $user->email }}</td>
-                <td>
+                <td class="text-gray-500 dark:text-gray-400 whitespace-nowrap">#{{ $user->id }}</td>
+                <td class="font-medium text-gray-900 dark:text-white whitespace-nowrap">{{ $user->name ?? 'N/A' }}</td>
+                <td class="text-gray-500 dark:text-gray-400 font-medium whitespace-nowrap">{{ $user->email }}</td>
+                <td class="whitespace-nowrap">
                     <span class="text-[#FF2D20]">{{ $user->activeSubscription->plan->name ?? 'No Plan' }}</span>
                 </td>
-                <td>
+                <td class="whitespace-nowrap">
                     <span class="status-pill {{ $user->status == 'ACTIVE' ? 'status-active' : 'status-suspended' }}">{{ $user->status }}</span>
                 </td>
-                <td class="text-gray-500 dark:text-gray-400">{{ $user->created_at->format('M d, Y') }}</td>
-                <td>
+                <td class="text-gray-500 dark:text-gray-400 whitespace-nowrap">{{ $user->created_at->format('M d, Y') }}</td>
+                <td class="whitespace-nowrap">
                     <div style="display: flex; gap: 0.5rem;">
                         <a href="{{ route('admin.users.edit', $user) }}" class="status-pill bg-white dark:bg-white/5 text-gray-700 dark:text-white border border-gray-200 dark:border-white/10 hover:bg-gray-50 dark:hover:bg-white/10 transition-colors cursor-pointer text-xs">Edit</a>
                         <form action="{{ route('admin.users.delete', $user) }}" method="POST" onsubmit="return confirm('Are you sure?')" style="display: inline;">
@@ -62,6 +65,7 @@
             @endforeach
         </tbody>
     </table>
+</div>
     
     <div style="margin-top: 2rem;">
         {{ $users->links() }}

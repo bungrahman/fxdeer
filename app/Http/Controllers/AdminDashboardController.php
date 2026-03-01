@@ -54,25 +54,27 @@ class AdminDashboardController extends Controller
 
     public function storeUser(Request $request)
     {
-        $data = $request->validate([
+          $request->validate([
+            'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|string|min:8',
-            'status' => 'required|in:ACTIVE,SUSPENDED',
-            'default_language' => 'required|string|max:5',
+            'password' => 'required|min:8',
+            'status' => 'required',
             'plan_id' => 'required|exists:plans,id',
         ]);
 
         $user = User::create([
-            'email' => $data['email'],
-            'password' => $data['password'], // Cast 'hashed' in User model will handle hashing
-            'status' => $data['status'],
-            'timezone' => 'UTC',
-            'default_language' => $data['default_language'],
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password,
+            'status' => $request->status,
+            'role' => 'CLIENT',
+            'timezone' => $request->timezone ?? 'UTC',
+            'default_language' => $request->default_language ?? 'en',
         ]);
 
         Subscription::create([
             'user_id' => $user->id,
-            'plan_id' => $data['plan_id'],
+            'plan_id' => $request->plan_id,
             'status' => 'ACTIVE',
             'renewal_date' => now()->addMonth(),
             'stripe_subscription_id' => 'manual_' . uniqid(),
@@ -91,15 +93,17 @@ class AdminDashboardController extends Controller
 
     public function updateUser(Request $request, User $user)
     {
-        $data = $request->validate([
-            'email' => 'required|email|unique:users,email,' . $user->id,
-            'password' => 'nullable|string|min:8',
-            'status' => 'required|in:ACTIVE,SUSPENDED',
+          $data = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,'.$user->id,
+            'password' => 'nullable|min:8',
+            'status' => 'required',
             'default_language' => 'required|string|max:5',
             'plan_id' => 'required|exists:plans,id',
         ]);
 
         $userUpdate = [
+            'name' => $data['name'],
             'email' => $data['email'],
             'status' => $data['status'],
             'default_language' => $data['default_language'],

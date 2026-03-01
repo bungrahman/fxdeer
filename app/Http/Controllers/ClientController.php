@@ -65,4 +65,30 @@ class ClientController extends Controller
 
         return back()->with('success', 'Language preference updated successfully!');
     }
+
+    public function profile()
+    {
+        $user = Auth::user();
+        return view('client.profile', compact('user'));
+    }
+
+    public function updateProfile(Request $request)
+    {
+        $user = Auth::user();
+        
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'password' => 'nullable|string|min:8|confirmed',
+        ]);
+
+        $data = ['name' => $request->name];
+        
+        if ($request->filled('password')) {
+            $data['password'] = $request->password; // Cast 'hashed' will handle it
+        }
+
+        $user->update($data);
+
+        return back()->with('success', 'Profile updated successfully!');
+    }
 }

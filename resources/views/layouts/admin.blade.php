@@ -50,14 +50,11 @@
 
     <div class="main-content">
         <!-- Top Navigation Area for Mobile & Dark Mode -->
-        <div class="flex justify-between items-center mb-8">
+        <div class="flex justify-between items-center mb-6 md:mb-8">
             <div class="flex items-center gap-4">
                 <button @click="sidebarOpen = true" class="md:hidden p-2 rounded-lg bg-white dark:bg-[#17171a]/70 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-300">
                     <i data-feather="menu"></i>
                 </button>
-                <div class="hidden md:block">
-                    <!-- Placeholder for desktop header if needed -->
-                </div>
             </div>
 
             <!-- Dark Mode Toggle -->

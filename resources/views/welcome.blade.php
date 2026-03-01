@@ -67,11 +67,11 @@
 
     <!-- Hero Section -->
     <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 pb-12">
-        <h1 class="text-5xl md:text-[5rem] font-bold leading-tight md:leading-[1.1] mb-6 tracking-tight max-w-4xl">
-            Elite <span class="text-[#FF2D20]">Financial Intelligence</span> for Modern Traders.
+        <h1 class="text-5xl md:text-[5rem] font-bold leading-tight md:leading-[1.1] mb-6 tracking-tight max-w-5xl">
+            Automate Your <span class="text-[#FF2D20]">Trading Edge</span> with High-Speed Intelligence.
         </h1>
-        <p class="text-lg md:text-xl text-gray-600 dark:text-[#94A3B8] max-w-2xl mb-10">
-            Personalize your news alerts through customized Signal Bots and multi-pipeline automation. Powered by AI and precision execution.
+        <p class="text-lg md:text-xl text-gray-600 dark:text-[#94A3B8] max-w-3xl mb-10">
+            Get professional-grade market news delivered instantly to your private Telegram channels. High-speed distribution tailored to your strategy, ensuring you never miss a move.
         </p>
         <a href="#pricing" class="btn-primary py-4 px-10 text-lg rounded-2xl shadow-[0_20px_40px_-10px_rgba(255,45,32,0.4)] hover:shadow-[0_30px_60px_-12px_rgba(255,45,32,0.5)]">Start Your Elite Journey</a>
     </section>
@@ -79,33 +79,41 @@
     <!-- Features Section -->
     <section id="features" class="py-24 px-6 md:px-[10%] bg-gray-50/50 dark:bg-white/5 border-y border-gray-200 dark:border-white/10">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Core Infrastructure</h2>
-            <p class="text-lg text-gray-600 dark:text-[#94A3B8]">Advanced automation for institutional-grade financial news delivery.</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Master the Market Cycle</h2>
+            <p class="text-lg text-gray-600 dark:text-[#94A3B8]">Comprehensive news distribution designed to keep you ahead of every trade.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="bg-white dark:bg-[#17171a]/70 p-8 rounded-3xl border border-gray-200 dark:border-white/10 hover:border-[#FF2D20] transition-colors duration-300 group shadow-sm dark:shadow-none">
                 <div class="w-14 h-14 bg-red-50 dark:bg-red-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <i data-feather="bot" class="text-[#FF2D20]"></i>
+                    <i data-feather="send" class="text-[#FF2D20]"></i>
                 </div>
-                <h4 class="text-xl font-bold mb-4">Personal Signal Bot</h4>
-                <p class="text-gray-600 dark:text-[#94A3B8] leading-relaxed">Configure your own Telegram Bot Token and Chat ID to receive exclusive signals on your private channels.</p>
+                <h4 class="text-xl font-bold mb-4">Private Signal Center</h4>
+                <p class="text-gray-600 dark:text-[#94A3B8] leading-relaxed">Receive high-speed alerts directly on your private Telegram bot. Complete privacy, zero lag for your execution.</p>
             </div>
 
             <div class="bg-white dark:bg-[#17171a]/70 p-8 rounded-3xl border border-gray-200 dark:border-white/10 hover:border-[#FF2D20] transition-colors duration-300 group shadow-sm dark:shadow-none">
                 <div class="w-14 h-14 bg-red-50 dark:bg-red-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <i data-feather="layers" class="text-[#FF2D20]"></i>
+                    <i data-feather="repeat" class="text-[#FF2D20]"></i>
                 </div>
-                <h4 class="text-xl font-bold mb-4">Multi-Pipeline System</h4>
-                <p class="text-gray-600 dark:text-[#94A3B8] leading-relaxed">Separated flows for Daily Outlook, Event Alerts, and Post-Event Reactions powered by AI processing.</p>
+                <h4 class="text-xl font-bold mb-4">Full-Cycle Coverage</h4>
+                <p class="text-gray-600 dark:text-[#94A3B8] leading-relaxed">Stay informed from pre-market outlooks to real-time event alerts and instant analysis of market reactions.</p>
             </div>
 
             <div class="bg-white dark:bg-[#17171a]/70 p-8 rounded-3xl border border-gray-200 dark:border-white/10 hover:border-[#FF2D20] transition-colors duration-300 group shadow-sm dark:shadow-none">
                 <div class="w-14 h-14 bg-red-50 dark:bg-red-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <i data-feather="shield-off" class="text-[#FF2D20]"></i>
+                    <i data-feather="globe" class="text-[#FF2D20]"></i>
                 </div>
-                <h4 class="text-xl font-bold mb-4">Global Kill-Switches</h4>
-                <p class="text-gray-600 dark:text-[#94A3B8] leading-relaxed">Institutional control with emergency pause for all news distribution during high market volatility.</p>
+                <h4 class="text-xl font-bold mb-4">Localized Routing</h4>
+                <p class="text-gray-600 dark:text-[#94A3B8] leading-relaxed">Your news, your language. Automatic routing in English, Indonesian, or any language of your choice.</p>
+            </div>
+
+            <div class="bg-white dark:bg-[#17171a]/70 p-8 rounded-3xl border border-gray-200 dark:border-white/10 hover:border-[#FF2D20] transition-colors duration-300 group shadow-sm dark:shadow-none">
+                <div class="w-14 h-14 bg-red-50 dark:bg-red-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i data-feather="zap" class="text-[#FF2D20]"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-4">Smart Trading Signals</h4>
+                <p class="text-gray-600 dark:text-[#94A3B8] leading-relaxed">Boost your strategy with precise, AI-curated trading signals delivered directly to your bot. Real-time entries for modern traders.</p>
             </div>
         </div>
     </section>
@@ -136,19 +144,19 @@
                         @if($plan->daily_outlook) 
                         <li class="flex items-start gap-3 text-gray-600 dark:text-[#94A3B8]">
                             <i data-feather="check" class="text-[#FF2D20] w-5 h-5 shrink-0 mt-0.5"></i> 
-                            <span>Daily Market Outlook</span>
+                            <span>Pre-Market Strategy Guide</span>
                         </li> 
                         @endif
                         @if($plan->upcoming_event_alerts) 
                         <li class="flex items-start gap-3 text-gray-600 dark:text-[#94A3B8]">
                             <i data-feather="check" class="text-[#FF2D20] w-5 h-5 shrink-0 mt-0.5"></i> 
-                            <span>Upcoming Event Alerts</span>
+                            <span>High-Impact Event Alerts</span>
                         </li> 
                         @endif
                         @if($plan->post_event_reaction) 
                         <li class="flex items-start gap-3 text-gray-600 dark:text-[#94A3B8]">
                             <i data-feather="check" class="text-[#FF2D20] w-5 h-5 shrink-0 mt-0.5"></i> 
-                            <span>Post-Event Reactions</span>
+                            <span>Instant Reaction Analysis</span>
                         </li> 
                         @endif
                         @if($plan->enable_telegram) 
