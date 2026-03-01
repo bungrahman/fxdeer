@@ -2,7 +2,7 @@
 
 Sistem automasi berita yang terintegrasi dengan n8n untuk fetching dan distribusi berita. Backend Laravel mengelola business logic, user management, dan billing integration dengan Stripe, PayPal, dan Duitku.
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - PHP 8.2+ (XAMPP)
@@ -51,7 +51,7 @@ C:\xampp\php\php.exe artisan migrate
 C:\xampp\php\php.exe artisan serve
 ```
 
-## 📚 API Documentation
+## API Documentation
 
 ### n8n Integration Endpoints
 
@@ -95,7 +95,7 @@ POST /api/stripe/webhook
 Stripe-Signature: [signature]
 ```
 
-## 🗄️ Database Schema
+## Database Schema
 
 - **users**: User accounts dengan status dan preferences
 - **plans**: Subscription plans dengan features dan quotas
@@ -104,7 +104,7 @@ Stripe-Signature: [signature]
 - **usage_log**: Daily usage tracking per user
 - **translations_cache**: Cached translations untuk optimasi
 
-## 🔧 Development
+## Development
 
 ### Run Tests
 ```bash
@@ -121,11 +121,8 @@ C:\xampp\php\php.exe artisan make:migration create_table_name
 C:\xampp\php\php.exe artisan make:model ModelName
 ```
 
-## 📖 Documentation
 
-Lihat [walkthrough.md](file:///C:/Users/Pavilion/.gemini/antigravity/brain/d2dffcd4-c7a1-4fc8-b295-e73511514345/walkthrough.md) untuk dokumentasi lengkap.
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework**: Laravel 11.x
 - **PHP**: 8.2.12
