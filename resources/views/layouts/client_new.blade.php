@@ -57,9 +57,9 @@
                     <i x-show="!darkMode" data-feather="moon" style="display: none;" class="w-5 h-5"></i>
                     <i x-show="darkMode" data-feather="sun" style="display: none;" class="w-5 h-5"></i>
                 </button>
-                <div class="w-10 h-10 bg-[#FF2D20] text-white rounded-full flex items-center justify-center font-bold">
-                    {{ strtoupper(substr(Auth::user()->email, 0, 1)) }}
-                </div>
+                <a href="{{ route('client.profile') }}" class="w-10 h-10 bg-[#FF2D20] text-white rounded-full flex items-center justify-center font-bold no-underline hover:opacity-80 transition-opacity">
+                    {{ strtoupper(substr(Auth::user()->name ?? Auth::user()->email, 0, 1)) }}
+                </a>
             </div>
         </div>
 

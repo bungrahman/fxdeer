@@ -87,12 +87,34 @@ class PaymentController extends Controller
             'status' => 'PENDING',
         ]);
 
+        return $this->triggerGateway($transaction, $request->payment_method);
+    }
+
+    /**
+     * Resume a pending transaction
+     */
+    public function resume(Transaction $transaction)
+    {
+        // Security: Ensure owner
+        if ($transaction->user_id !== Auth::id()) {
+            abort(403);
+        }
+
+        if ($transaction->status !== 'PENDING') {
+            return redirect()->route('client.billing')->with('error', 'Only pending transactions can be resumed.');
+        }
+
+        return $this->triggerGateway($transaction);
+    }
+
+    protected function triggerGateway(Transaction $transaction, $paymentMethod = null)
+    {
         // 2. Redirect to specific gateway logic
-        switch ($request->gateway) {
+        switch ($transaction->gateway) {
             case 'stripe':
                 return $this->handleStripe($transaction);
             case 'duitku':
-                return $this->handleDuitku($transaction, $request->payment_method);
+                return $this->handleDuitku($transaction, $paymentMethod);
             case 'paypal':
                 return $this->handlePayPal($transaction);
         }

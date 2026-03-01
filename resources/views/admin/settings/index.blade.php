@@ -22,7 +22,7 @@
 <form id="settings-form" action="{{ route('admin.settings.update') }}" method="POST">
     @csrf
     
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <!-- API Configuration -->
         <div class="section-card">
             <div class="section-title"><i data-feather="key"></i> API Configuration</div>
@@ -187,7 +187,7 @@
                 
                 @if(count($supportedLangs) > 0)
                     @foreach($supportedLangs as $index => $lang)
-                        <div class="lang-row" style="display: grid; grid-template-columns: 200px 1fr 1fr 50px; gap: 1rem; margin-bottom: 1rem; align-items: end;">
+                        <div class="lang-row border-b border-gray-200 dark:border-white/5 pb-6 mb-6 last:border-0 last:pb-0 grid grid-cols-1 md:grid-cols-[200px_1fr_1fr_50px] gap-4 items-end">
                             <div>
                                 <label style="display: block; color: var(--text-dim); font-size: 0.7rem; margin-bottom: 0.3rem;">Language</label>
                                 <select name="supported_languages[{{ $index }}][code]" onchange="updateLangName(this, {{ $index }})" style="width: 100%; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); color: white; padding: 0.6rem; border-radius: 8px; outline: none; font-size: 0.85rem;" required>
@@ -225,8 +225,7 @@
         function addLanguageRow() {
             const container = document.getElementById('language-container');
             const row = document.createElement('div');
-            row.className = 'lang-row';
-            row.style = 'display: grid; grid-template-columns: 200px 1fr 1fr 50px; gap: 1rem; margin-bottom: 1rem; align-items: end;';
+            row.className = 'lang-row border-b border-gray-200 dark:border-white/5 pb-6 mb-6 last:border-0 last:pb-0 grid grid-cols-1 md:grid-cols-[200px_1fr_1fr_50px] gap-4 items-end';
             
             let optionsHtml = '';
             for (const [code, name] of Object.entries(isoLangs)) {

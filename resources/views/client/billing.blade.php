@@ -34,9 +34,16 @@
                                 default => 'bg-gray-50 text-gray-400'
                             };
                         @endphp
-                        <span class="status-pill {{ $statusClass }}">
-                            {{ $tx->status }}
-                        </span>
+                        <div class="flex items-center gap-2">
+                            <span class="status-pill {{ $statusClass }}">
+                                {{ $tx->status }}
+                            </span>
+                            @if($tx->status === 'PENDING')
+                                <a href="{{ route('payment.resume', $tx) }}" class="text-[10px] font-bold bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-500/20 px-2 py-1 rounded-md hover:bg-indigo-100 dark:hover:bg-indigo-500/20 transition-colors uppercase">
+                                    Pay Now
+                                </a>
+                            @endif
+                        </div>
                     </td>
                 </tr>
                 @endforeach

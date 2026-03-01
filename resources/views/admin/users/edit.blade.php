@@ -25,16 +25,20 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div>
-                <label class="block text-gray-500 dark:text-[#94A3B8] text-sm mb-2">Email Address</label>
-                <input type="email" name="email" value="{{ $user->email }}" class="input-field" required>
+                <label class="block text-gray-500 dark:text-[#94A3B8] text-sm mb-2">Full Name</label>
+                <input type="text" name="name" value="{{ $user->name }}" class="input-field" required>
             </div>
             <div>
-                <label class="block text-gray-500 dark:text-[#94A3B8] text-sm mb-2">New Password (Optional)</label>
-                <input type="password" name="password" class="input-field" placeholder="Leave blank to keep current">
+                <label class="block text-gray-500 dark:text-[#94A3B8] text-sm mb-2">Email Address</label>
+                <input type="email" name="email" value="{{ $user->email }}" class="input-field" required>
             </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div>
+                <label class="block text-gray-500 dark:text-[#94A3B8] text-sm mb-2">New Password (Optional)</label>
+                <input type="password" name="password" class="input-field" placeholder="Leave blank to keep current">
+            </div>
             <div>
                 <label class="block text-gray-500 dark:text-[#94A3B8] text-sm mb-2">Status</label>
                 <select name="status" class="input-field">
@@ -42,6 +46,7 @@
                     <option value="SUSPENDED" {{ $user->status == 'SUSPENDED' ? 'selected' : '' }}>SUSPENDED</option>
                 </select>
             </div>
+        </div>
             <div>
                 <label class="block text-gray-500 dark:text-[#94A3B8] text-sm mb-2">Current Plan</label>
                 <select name="plan_id" class="input-field">

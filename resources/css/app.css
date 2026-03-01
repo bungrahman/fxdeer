@@ -14,11 +14,11 @@
     }
 
     .main-content {
-        @apply flex-1 p-6 md:p-12 overflow-y-auto h-screen w-full;
+        @apply flex-1 p-4 md:p-12 overflow-y-auto h-screen w-full;
     }
 
     .section-card {
-        @apply bg-white dark:bg-[#17171a]/70 border border-gray-200 dark:border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur-md mb-8 transition-colors duration-200 shadow-sm dark:shadow-none;
+        @apply bg-white dark:bg-[#17171a]/70 border border-gray-200 dark:border-white/10 rounded-2xl md:rounded-3xl p-4 md:p-8 backdrop-blur-md mb-6 md:mb-8 transition-colors duration-200 shadow-sm dark:shadow-none;
     }
 
     .nav-link {

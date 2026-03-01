@@ -1,7 +1,7 @@
 @extends('layouts.auth')
 
 @section('title', 'Select Payment')
-@section('subtitle', "You've selected the {$plan->name} package.")
+@section('subtitle', "Hello " . Auth::user()->name . ", you've selected the {$plan->name} package.")
 
 @section('content')
 

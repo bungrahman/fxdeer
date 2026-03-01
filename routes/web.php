@@ -23,12 +23,15 @@ Route::middleware(['auth', 'role:CLIENT', 'maintenance'])->group(function () {
     Route::get('/dashboard', [\App\Http\Controllers\ClientController::class, 'index'])->name('client.dashboard');
     Route::get('/pipelines', [\App\Http\Controllers\ClientController::class, 'pipelines'])->name('client.pipelines');
     Route::get('/billing', [\App\Http\Controllers\ClientController::class, 'billing'])->name('client.billing');
+    Route::get('/profile', [\App\Http\Controllers\ClientController::class, 'profile'])->name('client.profile');
+    Route::post('/profile', [\App\Http\Controllers\ClientController::class, 'updateProfile'])->name('client.profile.update');
     Route::post('/settings/bot', [\App\Http\Controllers\ClientController::class, 'updateBotSettings'])->name('client.settings.bot');
     Route::post('/settings/language', [\App\Http\Controllers\ClientController::class, 'updateLanguage'])->name('client.settings.language');
     
     // Payment Flow
     Route::get('/checkout/{plan}', [\App\Http\Controllers\PaymentController::class, 'checkout'])->name('payment.checkout');
     Route::post('/payment/process', [\App\Http\Controllers\PaymentController::class, 'process'])->name('payment.process');
+    Route::get('/payment/resume/{transaction}', [\App\Http\Controllers\PaymentController::class, 'resume'])->name('payment.resume');
     Route::get('/payment/success', [\App\Http\Controllers\PaymentController::class, 'success'])->name('payment.success');
 });
 

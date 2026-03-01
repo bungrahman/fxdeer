@@ -24,16 +24,20 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div>
-                <label class="block text-gray-500 dark:text-[#94A3B8] text-sm mb-2">Email Address</label>
-                <input type="email" name="email" class="input-field" placeholder="user@example.com" required>
+                <label class="block text-gray-500 dark:text-[#94A3B8] text-sm mb-2">Full Name</label>
+                <input type="text" name="name" class="input-field" placeholder="John Doe" required autofocus>
             </div>
             <div>
-                <label class="block text-gray-500 dark:text-[#94A3B8] text-sm mb-2">Initial Password</label>
-                <input type="password" name="password" class="input-field" placeholder="Min. 8 characters" required>
+                <label class="block text-gray-500 dark:text-[#94A3B8] text-sm mb-2">Email Address</label>
+                <input type="email" name="email" class="input-field" placeholder="user@example.com" required>
             </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div>
+                <label class="block text-gray-500 dark:text-[#94A3B8] text-sm mb-2">Initial Password</label>
+                <input type="password" name="password" class="input-field" placeholder="Min. 8 characters" required>
+            </div>
             <div>
                 <label class="block text-gray-500 dark:text-[#94A3B8] text-sm mb-2">Status</label>
                 <select name="status" class="input-field">
@@ -41,6 +45,7 @@
                     <option value="SUSPENDED">SUSPENDED</option>
                 </select>
             </div>
+        </div>
             <div>
                 <label class="block text-gray-500 dark:text-[#94A3B8] text-sm mb-2">Assign Plan</label>
                 <select name="plan_id" class="input-field">

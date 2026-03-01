@@ -23,7 +23,8 @@
 
 <div class="section-card">
     @if($configs->count() > 0)
-        <table>
+        <div class="overflow-x-auto">
+            <table>
             <thead>
                 <tr>
                     <th>#</th>
@@ -75,7 +76,8 @@
                     </tr>
                 @endforeach
             </tbody>
-        </table>
+            </table>
+        </div>
     @else
         <div style="text-align: center; padding: 3rem; color: var(--text-dim);">
             <i data-feather="cpu" style="width: 48px; height: 48px; margin-bottom: 1rem; opacity: 0.3;"></i>

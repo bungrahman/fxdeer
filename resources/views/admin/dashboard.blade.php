@@ -41,12 +41,12 @@
             <input type="hidden" name="value" id="switchValue">
 
             @foreach(['emergency_pause' => 'Emergency Global Pause', 'kill_switch_pipeline_a' => 'Pipeline A (High Priority)', 'kill_switch_pipeline_b' => 'Pipeline B (Standard)'] as $key => $label)
-            <div class="flex justify-between items-center py-5 {{ !$loop->last ? 'border-b border-gray-200 dark:border-white/10' : '' }}">
-                <div>
-                    <h5 class="text-base font-semibold mb-1">{{ $label }}</h5>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm">Instantly control news distribution for this module.</p>
+            <div class="flex justify-between items-center py-5 {{ !$loop->last ? 'border-b border-gray-200 dark:border-white/10' : '' }} gap-4">
+                <div class="flex-1">
+                    <h5 class="text-sm md:text-base font-semibold mb-1">{{ $label }}</h5>
+                    <p class="text-gray-500 dark:text-gray-400 text-xs md:text-sm">Control news distribution.</p>
                 </div>
-                <label class="switch-label">
+                <label class="switch-label shrink-0">
                     <input type="checkbox" class="switch-input" onchange="submitToggle('{{ $key }}', this.checked)" {{ \App\Models\Setting::get($key, false) ? 'checked' : '' }}>
                     <span class="switch-slider"></span>
                 </label>
@@ -57,7 +57,8 @@
 
     <div class="section-card">
         <div class="section-title"><i data-feather="user-check"></i> Recent Users</div>
-        <table>
+        <div class="overflow-x-auto">
+            <table>
             <thead>
                 <tr><th>User</th><th>Status</th></tr>
             </thead>
@@ -72,7 +73,7 @@
                 </tr>
                 @endforeach
             </tbody>
-        </table>
+        </div>
     </div>
 </div>
 @endsection
